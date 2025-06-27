@@ -1,0 +1,79 @@
+#AI CHATBOT WITH NLP(TASK3)
+!pip install nltk
+import nltk
+from nltk.chat.util import Chat,reflections
+#Sample conversation patterns and responses:
+pairs=[
+  [
+      r"hi|hello|hey",
+      ["Hello!", "Hi there!", "Hey! How can i help you?"]
+  ],
+  [
+      r"What is your name?",
+      ["I'm a simple NLP chatbot created using NLTK."]
+  ],
+  [
+      r"how are you?",
+      ["I'm doing great.how about you?"]
+  ],
+  [
+      r"What can i do?",
+      ["I can answer simple questions. Try asking about my name, how I am, or just say hi."]
+  ],
+  [
+      r"bye|exit|quit",
+      ["Goodbye!", "See you later!", "Thanks for chatting!"]
+  ],
+  [
+      r"(.*)",
+      ["I'm not sure how to respond to that.Try asking something else."]
+  ]
+]
+
+#Creating and running chatbot:
+def run_chatbot(pairs,bot_name="ChatBot"):
+    print("ChatBot is ready! Type 'bye' to exit.")
+    chatbot=Chat(pairs, reflections)
+    chatbot.converse()
+
+    
+run_chatbot(pairs)
+career_pairs = [
+    [r"hi|hello|hey", ["Hello! How can I assist you with your career today?"]],
+    [r".* resume .*", ["Make sure your resume is clear, concise, and tailored to the job role."]],
+    [r".* interview tips .*", ["Practice common questions, know the company, and be confident!"]],
+    [r".* job openings .*", ["You can check LinkedIn, Naukri, or Indeed for the latest openings."]],
+    [r".* skills .*", ["Focus on learning Python, data analysis, communication, and problem-solving skills."]],
+    [r"thank you|thanks", ["You're welcome! Best of luck with your career."]],
+    [r"bye|exit|quit", ["Goodbye! Keep learning and growing!"]],
+    [r"(.*)", ["I'm not sure I understand. Try asking about resumes, interviews, or jobs."]]
+]
+
+def run_chatbot(career_pairs, bot_name="CareerBot"):
+    print(f"{bot_name} is ready! Type 'bye' to exit.")
+    chatbot=Chat(career_pairs, reflections)
+    chatbot.converse()
+
+    
+run_chatbot(career_pairs)
+mental_pairs = [
+    [r"hi|hello|hey", ["Hi! I'm here for your mental wellness. How are you feeling today?"]],
+    [r"i am (.*)", ["Why do you feel %1?", "Let's talk about that."]],
+    [r".*stressed.*", ["Try deep breathing, take a break, or talk to someone you trust."]],
+    [r".*anxious.*", ["It's okay to feel anxious. Would you like a calming exercise?"]],
+    [r".*not okay.*", ["You're not alone. I'm here with you. Talking helps."]],
+    [r"thank you|thanks", ["Anytime! Your well-being matters."]],
+    [r"bye|exit|quit", ["Take care! Remember to be kind to yourself."]],
+    [r"(.*)", ["I’m listening. Tell me more about how you're feeling."]]
+]
+
+def run_chatbot(mental_pairs, bot_name="WellnessBot"):
+    print(f"{bot_name} is ready! Type 'bye' to exit.")
+    chatbot = Chat(mental_pairs, reflections)
+    chatbot.converse()
+
+# Start chatbot
+run_chatbot(mental_pairs)
+
+
+
